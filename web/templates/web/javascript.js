@@ -1,0 +1,4 @@
+function loading(){
+	$('.ajaxProgress').show();
+
+}

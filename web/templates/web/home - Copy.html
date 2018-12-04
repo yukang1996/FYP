@@ -1,0 +1,29 @@
+{% load crispy_forms_tags %}
+
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width-device-width", initial-scale=1.0>
+		<title>PDCS UM</title>
+		<!-- <link rel="icon" href="web/media/umlogo.png"> -->
+		<link rel="icon" href="https://upload.wikimedia.org/wikipedia/en/thumb/6/63/University_of_Malaya_coat_of_arms.svg/1200px-University_of_Malaya_coat_of_arms.svg.png">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="0sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+	</head>
+	<body style = "padding: 30px;">
+		<nav class = "navbar navbar-inverse">
+			<div class = "container-fluid">
+				<div class = "navbar-header">
+					<a class = "navbar-brand" href = "#">Pothole Detection & Classification System</a>
+				</div>
+				
+
+
+			<h1>Pothole Detection & Classification System</h1>
+			<h2>Report</h2>
+			<h3>Please report the pothole you saw in University Malaya to us.</h3>
+			
+			{% crispy form form.helper %}
+	</body>
+</html>
