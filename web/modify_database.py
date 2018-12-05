@@ -1,7 +1,6 @@
 import os
 import sqlite3
 from shutil import copy2
-from settings import DATABASES
 
 def read_database():
 	# conn = sqlite3.connect(r'fyp\db.sqlite3'))
