@@ -1,20 +1,23 @@
 import os
 import sqlite3
 from shutil import copy2
+from settings import DATABASES
 
 def read_database():
-	conn = sqlite3.connect(r'C:\Users\User\Desktop\django tutorial\fyp\db.sqlite3')
-	c = conn.cursor()
-	all_data = list(c.execute('SELECT * FROM web_snippet'))
-	print(all_data)
-	newest_data = list(c.execute('SELECT * FROM web_snippet ORDER BY id DESC LIMIT 1'))
+	# conn = sqlite3.connect(r'fyp\db.sqlite3'))
+
+	# c = conn.cursor()
+	# all_data = list(c.execute('SELECT * FROM web_snippet'))
+	# print(all_data)
+	# # newest_data = list(c.execute('SELECT * FROM web_snippet ORDER BY id DESC LIMIT 1'))
+	newest_data = 0
 	print('Newest Data')
 	print(newest_data)
 	return newest_data
 
 def move_file(newest_data):
 	try:
-		MEDIA_ROOT = "/Users/User/Desktop/django tutorial/fyp/web/media/"
+		MEDIA_ROOT = "fyp/web/media/"
 		file_id = newest_data[0][0]
 		name = newest_data[0][1]
 		email = newest_data[0][2]
@@ -24,8 +27,8 @@ def move_file(newest_data):
 		image_ref1 = os.path.join(MEDIA_ROOT, newest_data[0][6])
 		image_ref2 = os.path.join(MEDIA_ROOT, newest_data[0][7])
 		# C:\Users\User\Desktop\django tutorial\fyp\web\Report
-		destination_pothole = r"C:\Users\User\Desktop\django tutorial\fyp\web\Report\%s\pothole"%(file_id)
-		destination_ref = r"C:\Users\User\Desktop\django tutorial\fyp\web\Report\%s\ref"%(file_id)
+		destination_pothole = r"fyp\web\Report\%s\pothole"%(file_id)
+		destination_ref = r"fyp\web\Report\%s\ref"%(file_id)
 		try:
 			copy2(pothole_image, destination_pothole)
 			copy2(image_ref1, destination_ref)
